@@ -1,13 +1,26 @@
-# Program #2: Math Quiz
-# Write a program that gives simple math quizzes.  The program should display two random numbers to be added, such as
+##
+# Code by Parker Jolly
+# On 10/2/2025
+# Program name: Math Quiz
+##
+import random
 
-#     247
 
-# + 129
+def main():
+    while True:
+        if input("Would you like to take a quiz? Y/N: ").lower().replace(" ","") == "y":
+            quiz()
+        else:
+            print("Exiting program...")
+            break
 
-# ------
+def quiz():   
+    num1 = random.randrange(-2000,2000)
+    num2 = random.randrange(-2000,2000)
+    if float(input("What is " + str(num1) + " + " + str(num2) + "? ").replace(" ","").replace(",","")) == num1+num2:
+        print("Yes! That is correct!")
+    else:
+        print("No. " + str(num1) + " + " + str(num2) + " = " + str(num1+num2) + ("."))
 
-# The program should allow the student to enter the answer.  
-# If the answer is correct, a message of congratulations should be displayed.  
-# If the answer is incorrect a message showing the correct answer should be displayed.  
-# The program must use a function that accomplishes part of the needed tasks.
+
+main()
